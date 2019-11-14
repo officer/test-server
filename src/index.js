@@ -1,5 +1,4 @@
 const express = require('express');
-const sleep = require('sleep');
 const app = express();
 
 app.get("/", (req, res) => {
@@ -17,7 +16,6 @@ app.get("/", (req, res) => {
         second = Number(req.query.sleep);
     }
 
-    sleep.sleep(second);
 
     res.sendStatus(status);
 
