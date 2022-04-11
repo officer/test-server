@@ -75,6 +75,8 @@ var notes = [
 app.options("/*", cors(corsOptions));
 
 app.get("/", (req, res) => {
+    console.log(JSON.stringify(req.params));
+    console.log(JSON.stringify(req.headers));
     var status; 
     if(undefined == req.query.status){
         status = 200;
