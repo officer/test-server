@@ -93,7 +93,7 @@ app.get("/", (req, res) => {
         second = Number(req.query.sleep);
     }
     res.set({
-        "Location": req.protocol + "://" + req.hostname + req.baseUrl + req.path + "?status=200"
+        "Location": "https://test-d8b09nh5.an.gateway.dev/?status=200"
     });
     res.sendStatus(status);
 
