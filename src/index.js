@@ -71,6 +71,8 @@ var notes = [
     }
 ]
 
+var increment = 0;
+
 // Allow Pre-flight access
 app.options("/*", cors(corsOptions));
 
@@ -83,15 +85,16 @@ app.get("/", (req, res) => {
     }else{
         status = Number(req.query.status);
     }
-
+    
     var second;
     if(undefined == req.query.sleep){
         second = 0;
     }else{
         second = Number(req.query.sleep);
     }
-
-
+    res.set({
+        "Location": req.protocol + "://" + req.hostname + req.baseUrl + req.path + "?status=200"
+    });
     res.sendStatus(status);
 
 });
